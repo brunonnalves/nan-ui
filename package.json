@@ -58,6 +58,9 @@
     "url": "https://github.com/brunonnalves/nan-ui/issues"
   },
   "homepage": "https://github.com/brunonnalves/nan-ui#readme",
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "react": ">=19.1.1",
     "react-dom": ">=19.1.1"
