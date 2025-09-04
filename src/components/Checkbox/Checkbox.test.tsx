@@ -78,11 +78,14 @@ describe('Checkbox', () => {
   });
 
   it('can be controlled', () => {
-    const { rerender } = render(<Checkbox label='Test' checked />);
+    const handleChange = jest.fn();
+    const { rerender } = render(
+      <Checkbox label='Test' checked onChange={handleChange} />
+    );
     let checkbox = screen.getByRole('checkbox', { name: /test/i });
     expect(checkbox).toBeChecked();
 
-    rerender(<Checkbox label='Test' checked={false} />);
+    rerender(<Checkbox label='Test' checked={false} onChange={handleChange} />);
     checkbox = screen.getByRole('checkbox', { name: /test/i });
     expect(checkbox).not.toBeChecked();
   });

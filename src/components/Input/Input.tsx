@@ -34,7 +34,7 @@ const Input: React.FC<InputProps> = ({
   ...props
 }) => {
   const [rawValue, setRawValue] = useState(
-    applyMask(String(value ?? ''), mask)
+    value ? applyMask(String(value), mask) : ''
   );
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -49,7 +49,7 @@ const Input: React.FC<InputProps> = ({
     setRawValue(formatted);
 
     // Se existir onChange, repassa apenas os números limpos para o formik
-    onChange &&
+    if (onChange) {
       onChange({
         ...e,
         target: {
@@ -62,14 +62,16 @@ const Input: React.FC<InputProps> = ({
           name: props.name!,
         },
       });
+    }
   };
 
   const handleClear = () => {
     setRawValue('');
-    onChange &&
+    if (onChange) {
       onChange({
         target: { name: props.name!, value: '' },
       } as React.ChangeEvent<HTMLInputElement>);
+    }
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {

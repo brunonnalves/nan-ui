@@ -98,13 +98,28 @@ describe('Radio', () => {
   });
 
   it('can be controlled', () => {
+    const handleChange = jest.fn();
     const { rerender } = render(
-      <Radio label='Test' checked name='test' value='test' />
+      <Radio
+        label='Test'
+        checked
+        name='test'
+        value='test'
+        onChange={handleChange}
+      />
     );
     let radio = screen.getByRole('radio', { name: /test/i });
     expect(radio).toBeChecked();
 
-    rerender(<Radio label='Test' checked={false} name='test' value='test' />);
+    rerender(
+      <Radio
+        label='Test'
+        checked={false}
+        name='test'
+        value='test'
+        onChange={handleChange}
+      />
+    );
     radio = screen.getByRole('radio', { name: /test/i });
     expect(radio).not.toBeChecked();
   });

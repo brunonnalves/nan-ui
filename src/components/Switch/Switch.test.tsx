@@ -88,11 +88,14 @@ describe('Switch', () => {
   });
 
   it('can be controlled', () => {
-    const { rerender } = render(<Switch label='Test' checked />);
+    const handleChange = jest.fn();
+    const { rerender } = render(
+      <Switch label='Test' checked onChange={handleChange} />
+    );
     let switchElement = screen.getByRole('switch', { name: /test/i });
     expect(switchElement).toBeChecked();
 
-    rerender(<Switch label='Test' checked={false} />);
+    rerender(<Switch label='Test' checked={false} onChange={handleChange} />);
     switchElement = screen.getByRole('switch', { name: /test/i });
     expect(switchElement).not.toBeChecked();
   });

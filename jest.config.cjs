@@ -7,7 +7,6 @@ module.exports = {
     // Mock CSS files
     '\\.(css|less|scss|sass)$': '<rootDir>/src/__mocks__/styleMock.js',
   },
-  setupFilesAfterEnv: ['<rootDir>/src/setupTests.ts'],
   transform: {
     '^.+\\.(ts|tsx)$': [
       'ts-jest',

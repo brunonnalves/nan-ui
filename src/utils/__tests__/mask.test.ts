@@ -1,3 +1,4 @@
+import { MaskTypes } from '../../types/maskTypes';
 import {
   applyMask,
   formatCurrency,
@@ -191,7 +192,7 @@ describe('Mask Utils', () => {
     });
 
     it('should return original value for unknown mask', () => {
-      expect(applyMask('12345678901234', 'unknown' as any)).toBe(
+      expect(applyMask('12345678901234', 'unknown' as MaskTypes)).toBe(
         '12345678901234'
       );
     });

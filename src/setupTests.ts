@@ -15,13 +15,19 @@ Object.defineProperty(window, 'matchMedia', {
   })),
 });
 
-// Suprimir warnings de depreciação do React Testing Library
+// Suprimir warnings específicos do React nos testes
 const originalError = console.error;
 beforeAll(() => {
-  console.error = (...args: any[]) => {
+  console.error = (...args: unknown[]) => {
     if (
       typeof args[0] === 'string' &&
-      args[0].includes('Warning: `ReactDOMTestUtils.act` is deprecated')
+      (args[0].includes('Warning: `ReactDOMTestUtils.act` is deprecated') ||
+        args[0].includes(
+          'A component is changing an uncontrolled input to be controlled'
+        ) ||
+        args[0].includes(
+          'You provided a `checked` prop to a form field without an `onChange` handler'
+        ))
     ) {
       return;
     }
