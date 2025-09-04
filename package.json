@@ -8,9 +8,9 @@
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
+      "types": "./dist/index.d.ts",
       "import": "./dist/index.esm.js",
-      "require": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+      "require": "./dist/index.js"
     },
     "./styles": "./dist/styles.css"
   },
@@ -55,28 +55,22 @@
   },
   "homepage": "https://github.com/brunonnalves/nan-ui#readme",
   "peerDependencies": {
-    "react": ">=16.8.0"
+    "react": ">=19.1.1"
   },
   "devDependencies": {
-    "@storybook/addon-essentials": "^8.6.14",
-    "@storybook/addon-interactions": "^7.5.0",
-    "@storybook/addon-links": "^7.5.0",
-    "@storybook/addon-onboarding": "^9.1.4",
-    "@storybook/addon-themes": "^7.5.0",
-    "@storybook/blocks": "^8.6.14",
-    "@storybook/react": "^9.1.4",
+    "@storybook/addon-docs": "^9.1.4",
     "@storybook/react-vite": "^9.1.4",
-    "@storybook/testing-library": "^0.2.2",
-    "@testing-library/jest-dom": "^6.8.0",
-    "@testing-library/react": "^13.4.0",
-    "@testing-library/user-event": "^14.5.0",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/react": "^16.3.0",
     "@types/jest": "^29.5.0",
     "@types/node": "^22.8.2",
-    "@types/react": "^18.3.11",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
     "@vitejs/plugin-react": "^5.0.2",
     "eslint": "^9.13.0",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.13",
+    "eslint-plugin-storybook": "^9.1.4",
     "globals": "^15.11.0",
     "husky": "^8.0.3",
     "identity-obj-proxy": "^3.0.0",
@@ -84,7 +78,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "lint-staged": "^15.0.0",
     "prettier": "^3.0.0",
-    "react": "^18.3.1",
+    "react": "^19.1.1",
     "storybook": "^9.1.4",
     "ts-jest": "^29.1.0",
     "typescript": "~5.6.2",
