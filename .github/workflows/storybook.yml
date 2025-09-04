@@ -1,0 +1,89 @@
+name: Deploy Storybook
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout do código
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      - name: Definir variáveis
+        run: |
+          echo "TAG=latest" >> $GITHUB_ENV
+          echo "REGISTRY=registry-proxy.nan.dev.br" >> $GITHUB_ENV
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Criar arquivo .env vazio
+        run: touch .env
+
+      - name: Build Storybook
+        run: npm run build-storybook
+
+      - name: Criar Dockerfile para Storybook
+        run: |
+          cat > Dockerfile.storybook << 'EOF'
+          FROM nginx:alpine
+
+          # Copiar arquivos do Storybook
+          COPY storybook-static/ /usr/share/nginx/html/
+
+          # Configuração do Nginx para SPA
+          RUN echo 'server { \
+              listen 80; \
+              server_name localhost; \
+              root /usr/share/nginx/html; \
+              index index.html; \
+              \
+              location / { \
+                  try_files $uri $uri/ /index.html; \
+              } \
+              \
+              # Cache para assets estáticos \
+              location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff|woff2|ttf|eot)$ { \
+                  expires 1y; \
+                  add_header Cache-Control "public, immutable"; \
+              } \
+          }' > /etc/nginx/conf.d/default.conf
+
+          EXPOSE 80
+          CMD ["nginx", "-g", "daemon off;"]
+          EOF
+
+      - name: Login no Docker Registry
+        run: |
+          echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login ${{ env.REGISTRY }} -u "${{ secrets.REGISTRY_USERNAME }}" --password-stdin
+
+      - name: Build da imagem Docker do Storybook
+        run: |
+          docker build \
+            --platform linux/amd64 \
+            -f Dockerfile.storybook \
+            -t ${{ env.REGISTRY }}/nan-ui-storybook:$TAG .
+
+      - name: Push da imagem Docker
+        run: |
+          docker push ${{ env.REGISTRY }}/nan-ui-storybook:$TAG
+
+      - name: Acionar Webhook para deploy no servidor
+        run: |
+          curl --fail -X POST https://deploy-proxy.nan.dev.br \
+            -H "Authorization: Bearer ${{ secrets.DEPLOY_TOKEN }}" \
+            -F "stack=nan-ui" \
+            -F "image_name=nan-ui-storybook" \
+            -F "service=nan-ui" \
+            -F "env_file=@.env" \
+            -F "compose_file=@docker-compose.storybook.yml"
