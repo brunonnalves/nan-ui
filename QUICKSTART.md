@@ -5,11 +5,11 @@ Este guia vai te ajudar a começar rapidamente com a biblioteca Nan-UI.
 ## 🚀 Instalação
 
 ```bash
-npm install nan-ui
+npm install @nan-dev/nan-ui
 # ou
-yarn add nan-ui
+yarn add @nan-dev/nan-ui
 # ou
-pnpm add nan-ui
+pnpm add @nan-dev/nan-ui
 ```
 
 ## 📦 Instalação das Dependências
@@ -26,8 +26,8 @@ npm install react react-dom
 
 ```tsx
 import React from 'react';
-import { Button, Input } from 'nan-ui';
-import 'nan-ui/dist/styles.css'; // Importe os estilos CSS
+import { Button, Input } from '@nan-dev/nan-ui';
+import '@nan-dev/nan-ui/dist/styles.css'; // Importe os estilos CSS
 
 function App() {
   return (
@@ -42,7 +42,7 @@ function App() {
 ### 2. Importando Componentes
 
 ```tsx
-import { Button, Input, Checkbox } from 'nan-ui';
+import { Button, Input, Checkbox } from '@nan-dev/nan-ui';
 
 function MyForm() {
   return (
@@ -59,7 +59,7 @@ function MyForm() {
 ### 3. Variantes de Botões
 
 ```tsx
-import { Button } from 'nan-ui';
+import { Button } from '@nan-dev/nan-ui';
 
 function ButtonExamples() {
   return (
@@ -76,7 +76,7 @@ function ButtonExamples() {
 ### 4. Tamanhos de Componentes
 
 ```tsx
-import { Button } from 'nan-ui';
+import { Button } from '@nan-dev/nan-ui';
 
 function ButtonSizes() {
   return (
@@ -92,7 +92,7 @@ function ButtonSizes() {
 ### 5. Componentes de Formulário
 
 ```tsx
-import { Input, Select, Textarea, Switch, Radio } from 'nan-ui';
+import { Input, Select, Textarea, Switch, Radio } from '@nan-dev/nan-ui';
 
 function FormComponents() {
   return (

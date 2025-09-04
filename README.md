@@ -18,11 +18,11 @@ Uma biblioteca moderna de componentes React com componentes de UI bonitos e func
 ## 📦 Instalação
 
 ```bash
-npm install nan-ui
+npm install @nan-dev/nan-ui
 # ou
-yarn add nan-ui
+yarn add @nan-dev/nan-ui
 # ou
-pnpm add nan-ui
+pnpm add @nan-dev/nan-ui
 ```
 
 ## 🔧 Dependências
@@ -41,8 +41,8 @@ Esta biblioteca requer apenas as seguintes dependências peer:
 ### Importação Básica
 
 ```tsx
-import { Button, Input } from 'nan-ui';
-import 'nan-ui/dist/styles.css'; // Importe os estilos CSS
+import { Button, Input } from '@nan-dev/nan-ui';
+import '@nan-dev/nan-ui/dist/styles.css'; // Importe os estilos CSS
 
 function App() {
   return (
@@ -69,7 +69,7 @@ function App() {
 ### Button
 
 ```tsx
-import { Button } from 'nan-ui';
+import { Button } from '@nan-dev/nan-ui';
 
 // Variantes
 <Button variant="primary">Botão Primário</Button>
@@ -90,7 +90,7 @@ import { Button } from 'nan-ui';
 ### Input
 
 ```tsx
-import { Input } from 'nan-ui';
+import { Input } from '@nan-dev/nan-ui';
 
 <Input
   label='Email'
@@ -105,7 +105,7 @@ import { Input } from 'nan-ui';
 ### Checkbox
 
 ```tsx
-import { Checkbox } from 'nan-ui';
+import { Checkbox } from '@nan-dev/nan-ui';
 
 <Checkbox label='Aceito os termos' size='large' />;
 ```
@@ -113,7 +113,7 @@ import { Checkbox } from 'nan-ui';
 ### Radio
 
 ```tsx
-import { Radio } from 'nan-ui';
+import { Radio } from '@nan-dev/nan-ui';
 
 <Radio label="Opção 1" name="options" value="1" size="large" />
 <Radio label="Opção 2" name="options" value="2" size="large" />
@@ -122,7 +122,7 @@ import { Radio } from 'nan-ui';
 ### Select
 
 ```tsx
-import { Select } from 'nan-ui';
+import { Select } from '@nan-dev/nan-ui';
 
 <Select
   label='País'
@@ -137,7 +137,7 @@ import { Select } from 'nan-ui';
 ### Switch
 
 ```tsx
-import { Switch } from 'nan-ui';
+import { Switch } from '@nan-dev/nan-ui';
 
 <Switch label='Notificações' size='large' />;
 ```
@@ -145,7 +145,7 @@ import { Switch } from 'nan-ui';
 ### Textarea
 
 ```tsx
-import { Textarea } from 'nan-ui';
+import { Textarea } from '@nan-dev/nan-ui';
 
 <Textarea
   label='Mensagem'
@@ -159,7 +159,7 @@ import { Textarea } from 'nan-ui';
 ### Divider
 
 ```tsx
-import { Divider } from 'nan-ui';
+import { Divider } from '@nan-dev/nan-ui';
 
 <Divider variant="dashed" />
 <Divider variant="dotted" text="ou" />

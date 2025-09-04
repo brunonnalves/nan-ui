@@ -1,5 +1,5 @@
 {
-  "name": "nan-ui",
+  "name": "@nan-dev/nan-ui",
   "version": "1.0.0",
   "description": "A modern React component library with beautiful UI components",
   "type": "module",

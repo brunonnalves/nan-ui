@@ -1,6 +1,6 @@
 services:
   nan-ui:
-    image: registry-proxy.nan.dev.br/nan-ui-storybook:latest
+    image: localhost:5000/nan-ui-storybook:latest
     container_name: nan-ui
     restart: unless-stopped
     environment:
