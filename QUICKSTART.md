@@ -17,7 +17,7 @@ pnpm add nan-ui
 A biblioteca requer apenas React e React DOM:
 
 ```bash
-npm install react
+npm install react react-dom
 ```
 
 ## 📖 Uso

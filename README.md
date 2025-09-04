@@ -31,7 +31,8 @@ Esta biblioteca requer apenas as seguintes dependências peer:
 
 ```json
 {
-  "react": ">=16.8.0"
+  "react": ">=19.1.1",
+  "react-dom": ">=19.1.1"
 }
 ```
 
