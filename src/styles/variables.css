@@ -1,0 +1,153 @@
+:root {
+  /* Colors */
+  --nan-primary-50: #fef2f2;
+  --nan-primary-100: #fee2e2;
+  --nan-primary-200: #fecaca;
+  --nan-primary-300: #fca5a5;
+  --nan-primary-400: #f87171;
+  --nan-primary-500: #ef4444;
+  --nan-primary-600: #dc2626;
+  --nan-primary-700: #b91c1c;
+  --nan-primary-800: #991b1b;
+  --nan-primary-900: #7f1d1d;
+  --nan-primary-950: #450a0a;
+
+  --nan-secondary-50: #f9fafb;
+  --nan-secondary-100: #f3f4f6;
+  --nan-secondary-200: #e5e7eb;
+  --nan-secondary-300: #d1d5db;
+  --nan-secondary-400: #9ca3af;
+  --nan-secondary-500: #6b7280;
+  --nan-secondary-600: #4b5563;
+  --nan-secondary-700: #374151;
+  --nan-secondary-800: #1f2937;
+  --nan-secondary-900: #111827;
+  --nan-secondary-950: #030712;
+
+  --nan-success-50: #ecfdf5;
+  --nan-success-100: #d1fae5;
+  --nan-success-200: #a7f3d0;
+  --nan-success-300: #6ee7b7;
+  --nan-success-400: #34d399;
+  --nan-success-500: #10b981;
+  --nan-success-600: #059669;
+  --nan-success-700: #047857;
+  --nan-success-800: #065f46;
+  --nan-success-900: #064e3b;
+  --nan-success-950: #022c22;
+
+  --nan-warning-50: #fffbeb;
+  --nan-warning-100: #fef3c7;
+  --nan-warning-200: #fde68a;
+  --nan-warning-300: #fcd34d;
+  --nan-warning-400: #fbbf24;
+  --nan-warning-500: #f59e0b;
+  --nan-warning-600: #d97706;
+  --nan-warning-700: #b45309;
+  --nan-warning-800: #92400e;
+  --nan-warning-900: #78350f;
+  --nan-warning-950: #451a03;
+
+  --nan-error-50: #fef2f2;
+  --nan-error-100: #fee2e2;
+  --nan-error-200: #fecaca;
+  --nan-error-300: #fca5a5;
+  --nan-error-400: #f87171;
+  --nan-error-500: #ef4444;
+  --nan-error-600: #dc2626;
+  --nan-error-700: #b91c1c;
+  --nan-error-800: #991b1b;
+  --nan-error-900: #7f1d1d;
+  --nan-error-950: #450a0a;
+
+  --nan-grey-50: #f9fafb;
+  --nan-grey-100: #f3f4f6;
+  --nan-grey-200: #e5e7eb;
+  --nan-grey-300: #d1d5db;
+  --nan-grey-400: #9ca3af;
+  --nan-grey-500: #6b7280;
+  --nan-grey-600: #4b5563;
+  --nan-grey-700: #374151;
+  --nan-grey-800: #1f2937;
+  --nan-grey-900: #111827;
+  --nan-grey-950: #030712;
+
+  /* Text Colors */
+  --nan-text-primary: var(--nan-grey-900);
+  --nan-text-secondary: var(--nan-grey-600);
+  --nan-text-disabled: var(--nan-grey-400);
+  --nan-text-inverse: #ffffff;
+
+  /* Background Colors */
+  --nan-bg-primary: #ffffff;
+  --nan-bg-secondary: var(--nan-grey-50);
+  --nan-bg-tertiary: var(--nan-grey-100);
+
+  /* Border Colors */
+  --nan-border-light: var(--nan-grey-200);
+  --nan-border-medium: var(--nan-grey-300);
+  --nan-border-dark: var(--nan-grey-400);
+
+  /* Spacing */
+  --nan-spacing-xs: 0.25rem;
+  --nan-spacing-sm: 0.5rem;
+  --nan-spacing-md: 1rem;
+  --nan-spacing-lg: 1.5rem;
+  --nan-spacing-xl: 2rem;
+  --nan-spacing-2xl: 3rem;
+  --nan-spacing-3xl: 4rem;
+
+  /* Border Radius */
+  --nan-radius-sm: 0.25rem;
+  --nan-radius-md: 0.375rem;
+  --nan-radius-lg: 0.5rem;
+  --nan-radius-xl: 0.75rem;
+  --nan-radius-2xl: 1rem;
+  --nan-radius-full: 9999px;
+
+  /* Typography */
+  --nan-font-family-primary:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue',
+    Arial, sans-serif;
+  --nan-font-family-mono:
+    SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace;
+
+  --nan-font-size-xs: 0.75rem;
+  --nan-font-size-sm: 0.875rem;
+  --nan-font-size-md: 1rem;
+  --nan-font-size-lg: 1.125rem;
+  --nan-font-size-xl: 1.25rem;
+  --nan-font-size-2xl: 1.5rem;
+  --nan-font-size-3xl: 1.875rem;
+  --nan-font-size-4xl: 2.25rem;
+
+  --nan-font-weight-light: 300;
+  --nan-font-weight-normal: 400;
+  --nan-font-weight-medium: 500;
+  --nan-font-weight-semibold: 600;
+  --nan-font-weight-bold: 700;
+  --nan-font-weight-extrabold: 800;
+
+  /* Shadows */
+  --nan-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --nan-shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --nan-shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --nan-shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Transitions */
+  --nan-transition-fast: 0.15s ease-in-out;
+  --nan-transition-normal: 0.2s ease-in-out;
+  --nan-transition-slow: 0.3s ease-in-out;
+
+  /* Z-Index */
+  --nan-z-dropdown: 1000;
+  --nan-z-sticky: 1020;
+  --nan-z-fixed: 1030;
+  --nan-z-modal-backdrop: 1040;
+  --nan-z-modal: 1050;
+  --nan-z-popover: 1060;
+  --nan-z-tooltip: 1070;
+}

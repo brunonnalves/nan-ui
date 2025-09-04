@@ -1,0 +1,190 @@
+/* Button Component Styles */
+.nan-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nan-spacing-sm);
+  border-radius: var(--nan-radius-md);
+  font-weight: var(--nan-font-weight-medium);
+  font-family: var(--nan-font-family-primary);
+  transition: all var(--nan-transition-normal);
+  cursor: pointer;
+  border: none;
+  text-decoration: none;
+  font-size: var(--nan-font-size-sm);
+  line-height: 1.5;
+  white-space: nowrap;
+  user-select: none;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Button Variants */
+.nan-button--primary {
+  background-color: var(--nan-primary-600);
+  color: var(--nan-text-inverse);
+  box-shadow: var(--nan-shadow-sm);
+}
+
+.nan-button--primary:hover:not(:disabled) {
+  background-color: var(--nan-primary-700);
+  box-shadow: var(--nan-shadow-md);
+  transform: translateY(-1px);
+}
+
+.nan-button--primary:active:not(:disabled) {
+  background-color: var(--nan-primary-800);
+  transform: translateY(0);
+}
+
+.nan-button--secondary {
+  background-color: var(--nan-bg-secondary);
+  color: var(--nan-text-primary);
+  border: 1px solid var(--nan-border-light);
+}
+
+.nan-button--secondary:hover:not(:disabled) {
+  background-color: var(--nan-bg-tertiary);
+  border-color: var(--nan-border-medium);
+  transform: translateY(-1px);
+}
+
+.nan-button--secondary:active:not(:disabled) {
+  background-color: var(--nan-border-light);
+  transform: translateY(0);
+}
+
+.nan-button--outline {
+  background-color: transparent;
+  color: var(--nan-text-primary);
+  border: 1px solid var(--nan-border-medium);
+}
+
+.nan-button--outline:hover:not(:disabled) {
+  background-color: var(--nan-bg-secondary);
+  border-color: var(--nan-border-dark);
+  transform: translateY(-1px);
+}
+
+.nan-button--outline:active:not(:disabled) {
+  background-color: var(--nan-border-light);
+  transform: translateY(0);
+}
+
+.nan-button--icon {
+  background-color: transparent;
+  color: var(--nan-text-primary);
+  border: none;
+  padding: var(--nan-spacing-xs);
+  border-radius: var(--nan-radius-full);
+}
+
+.nan-button--icon:hover:not(:disabled) {
+  background-color: var(--nan-bg-secondary);
+  color: var(--nan-text-primary);
+  transform: translateY(-1px);
+}
+
+.nan-button--icon:active:not(:disabled) {
+  background-color: var(--nan-border-light);
+  transform: translateY(0);
+}
+
+/* Button Sizes */
+.nan-button--small {
+  padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+  font-size: var(--nan-font-size-xs);
+  min-height: 2rem;
+}
+
+.nan-button--medium {
+  padding: var(--nan-spacing-md) var(--nan-spacing-lg);
+  font-size: var(--nan-font-size-sm);
+  min-height: 2.5rem;
+}
+
+.nan-button--large {
+  padding: var(--nan-spacing-lg) var(--nan-spacing-xl);
+  font-size: var(--nan-font-size-md);
+  min-height: 3rem;
+}
+
+/* Button States */
+.nan-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+  filter: grayscale(0.3);
+}
+
+.nan-button:focus-visible {
+  outline: 0.125rem solid var(--nan-primary-500);
+  outline-offset: 0.125rem;
+}
+
+/* Button with loading state */
+.nan-button--loading {
+  position: relative;
+  color: transparent;
+}
+
+.nan-button--loading::after {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border: 0.125rem solid transparent;
+  border-top: 0.125rem solid currentColor;
+  border-radius: 50%;
+  animation: nan-spin 1s linear infinite;
+}
+
+@keyframes nan-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Button group */
+.nan-button-group {
+  display: inline-flex;
+  border-radius: var(--nan-radius-md);
+  overflow: hidden;
+}
+
+.nan-button-group .nan-button {
+  border-radius: 0;
+  margin: 0;
+}
+
+.nan-button-group .nan-button:first-child {
+  border-top-left-radius: var(--nan-radius-md);
+  border-bottom-left-radius: var(--nan-radius-md);
+}
+
+.nan-button-group .nan-button:last-child {
+  border-top-right-radius: var(--nan-radius-md);
+  border-bottom-right-radius: var(--nan-radius-md);
+}
+
+.nan-button-group .nan-button:not(:last-child) {
+  border-right: 0.0625rem solid var(--nan-border-light);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .nan-button--large {
+    padding: var(--nan-spacing-md) var(--nan-spacing-lg);
+    font-size: var(--nan-font-size-sm);
+    min-height: 2.75rem;
+  }
+
+  .nan-button--medium {
+    padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+    font-size: var(--nan-font-size-sm);
+    min-height: 2.25rem;
+  }
+}

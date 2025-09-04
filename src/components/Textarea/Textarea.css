@@ -1,0 +1,138 @@
+/* Textarea Component Styles */
+.nan-textarea-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.nan-textarea {
+  width: 100%;
+  padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+  font-size: var(--nan-font-size-sm);
+  font-family: var(--nan-font-family-primary);
+  line-height: 1.5;
+  color: var(--nan-text-primary);
+  background-color: var(--nan-bg-primary);
+  border: 1px solid var(--nan-border-medium);
+  border-radius: var(--nan-radius-md);
+  transition: all var(--nan-transition-normal);
+  box-sizing: border-box;
+  resize: vertical;
+  min-height: 5rem;
+}
+
+.nan-textarea:focus {
+  outline: none;
+  border-color: var(--nan-primary-500);
+  box-shadow: 0 0 0 0.1875rem rgba(239, 68, 68, 0.1);
+}
+
+.nan-textarea:hover:not(:focus):not(:disabled) {
+  border-color: var(--nan-border-dark);
+}
+
+.nan-textarea:disabled {
+  background-color: var(--nan-bg-secondary);
+  color: var(--nan-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+  resize: none;
+}
+
+/* Textarea sizes */
+.nan-textarea--small {
+  padding: var(--nan-spacing-xs) var(--nan-spacing-sm);
+  font-size: var(--nan-font-size-xs);
+  min-height: 3.75rem;
+}
+
+.nan-textarea--medium {
+  padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+  font-size: var(--nan-font-size-sm);
+  min-height: 5rem;
+}
+
+.nan-textarea--large {
+  padding: var(--nan-spacing-md) var(--nan-spacing-lg);
+  font-size: var(--nan-font-size-md);
+  min-height: 6.25rem;
+}
+
+/* Textarea variants */
+.nan-textarea--error {
+  border-color: var(--nan-error-500);
+  box-shadow: 0 0 0 0.1875rem rgba(239, 68, 68, 0.1);
+}
+
+.nan-textarea--error:focus {
+  border-color: var(--nan-error-600);
+  box-shadow: 0 0 0 0.1875rem rgba(239, 68, 68, 0.2);
+}
+
+.nan-textarea--success {
+  border-color: var(--nan-success-500);
+  box-shadow: 0 0 0 0.1875rem rgba(16, 185, 129, 0.1);
+}
+
+.nan-textarea--success:focus {
+  border-color: var(--nan-success-600);
+  box-shadow: 0 0 0 0.1875rem rgba(16, 185, 129, 0.2);
+}
+
+/* Textarea with label */
+.nan-textarea-label {
+  display: block;
+  font-size: var(--nan-font-size-sm);
+  font-weight: var(--nan-font-weight-medium);
+  color: var(--nan-text-primary);
+  margin-bottom: var(--nan-spacing-sm);
+  line-height: 1.5;
+}
+
+.nan-textarea-label.required::after {
+  content: ' *';
+  color: var(--nan-error-500);
+}
+
+/* Textarea error message */
+.nan-textarea-error {
+  color: var(--nan-error-600);
+  font-size: var(--nan-font-size-sm);
+  margin-top: var(--nan-spacing-xs);
+  line-height: 1.4;
+}
+
+/* Textarea help text */
+.nan-textarea-help {
+  color: var(--nan-text-secondary);
+  font-size: var(--nan-font-size-sm);
+  margin-top: var(--nan-spacing-xs);
+  line-height: 1.4;
+}
+
+/* Textarea character count */
+.nan-textarea-count {
+  text-align: right;
+  font-size: var(--nan-font-size-xs);
+  color: var(--nan-text-secondary);
+  margin-top: var(--nan-spacing-xs);
+  line-height: 1.4;
+}
+
+.nan-textarea-count--limit {
+  color: var(--nan-error-500);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .nan-textarea--large {
+    padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+    font-size: var(--nan-font-size-sm);
+    min-height: 5.625rem;
+  }
+
+  .nan-textarea--medium {
+    padding: var(--nan-spacing-xs) var(--nan-spacing-sm);
+    font-size: var(--nan-font-size-sm);
+    min-height: 4.375rem;
+  }
+}

@@ -1,0 +1,143 @@
+/* Nan-UI Library - Main CSS Entry Point */
+
+/* Import base styles */
+@import './variables.css';
+@import './base.css';
+
+/* Import component styles */
+@import '../components/Button/Button.css';
+@import '../components/Input/Input.css';
+@import '../components/Checkbox/Checkbox.css';
+@import '../components/Radio/Radio.css';
+@import '../components/Switch/Switch.css';
+@import '../components/Textarea/Textarea.css';
+@import '../components/Select/Select.css';
+@import '../components/Divider/Divider.css';
+
+/* Global styles for the library */
+.nan-ui-reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nan-ui-reset *,
+.nan-ui-reset *::before,
+.nan-ui-reset *::after {
+  box-sizing: inherit;
+}
+
+/* Utility classes */
+.nan-text-center {
+  text-align: center;
+}
+.nan-text-left {
+  text-align: left;
+}
+.nan-text-right {
+  text-align: right;
+}
+
+.nan-font-light {
+  font-weight: var(--nan-font-weight-light);
+}
+.nan-font-normal {
+  font-weight: var(--nan-font-weight-normal);
+}
+.nan-font-medium {
+  font-weight: var(--nan-font-weight-medium);
+}
+.nan-font-semibold {
+  font-weight: var(--nan-font-weight-semibold);
+}
+.nan-font-bold {
+  font-weight: var(--nan-font-weight-bold);
+}
+
+.nan-text-xs {
+  font-size: var(--nan-font-size-xs);
+}
+.nan-text-sm {
+  font-size: var(--nan-font-size-sm);
+}
+.nan-text-md {
+  font-size: var(--nan-font-size-md);
+}
+.nan-text-lg {
+  font-size: var(--nan-font-size-lg);
+}
+.nan-text-xl {
+  font-size: var(--nan-font-size-xl);
+}
+
+.nan-text-primary {
+  color: var(--nan-text-primary);
+}
+.nan-text-secondary {
+  color: var(--nan-text-secondary);
+}
+.nan-text-disabled {
+  color: var(--nan-text-disabled);
+}
+
+.nan-bg-primary {
+  background-color: var(--nan-bg-primary);
+}
+.nan-bg-secondary {
+  background-color: var(--nan-bg-secondary);
+}
+.nan-bg-tertiary {
+  background-color: var(--nan-bg-tertiary);
+}
+
+.nan-border {
+  border: 1px solid var(--nan-border-light);
+}
+.nan-border-0 {
+  border: none;
+}
+
+.nan-rounded-sm {
+  border-radius: var(--nan-radius-sm);
+}
+.nan-rounded-md {
+  border-radius: var(--nan-radius-md);
+}
+.nan-rounded-lg {
+  border-radius: var(--nan-radius-lg);
+}
+.nan-rounded-full {
+  border-radius: var(--nan-radius-full);
+}
+
+.nan-shadow-sm {
+  box-shadow: var(--nan-shadow-sm);
+}
+.nan-shadow-md {
+  box-shadow: var(--nan-shadow-md);
+}
+.nan-shadow-lg {
+  box-shadow: var(--nan-shadow-lg);
+}
+.nan-shadow-xl {
+  box-shadow: var(--nan-shadow-xl);
+}
+
+/* Responsive utilities */
+@media (max-width: 640px) {
+  .nan-hidden-sm {
+    display: none !important;
+  }
+}
+
+@media (min-width: 641px) {
+  .nan-hidden-md {
+    display: none !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .nan-hidden-lg {
+    display: none !important;
+  }
+}

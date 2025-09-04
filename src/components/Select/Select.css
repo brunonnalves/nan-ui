@@ -1,0 +1,267 @@
+/* Select Component Styles */
+.nan-select-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.nan-select {
+  width: 100%;
+  padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+  padding-right: calc(var(--nan-spacing-md) + 1.25rem);
+  font-size: var(--nan-font-size-sm);
+  font-family: var(--nan-font-family-primary);
+  line-height: 1.5;
+  color: var(--nan-text-primary);
+  background-color: var(--nan-bg-primary);
+  border: 1px solid var(--nan-border-medium);
+  border-radius: var(--nan-radius-md);
+  transition: all var(--nan-transition-normal);
+  box-sizing: border-box;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 2.5rem;
+  outline: none;
+}
+
+.nan-select:focus {
+  border-color: var(--nan-primary-500);
+  box-shadow: 0 0 0 0.1875rem rgba(59, 130, 246, 0.1);
+}
+
+.nan-select:hover:not(:focus):not(.nan-select--disabled) {
+  border-color: var(--nan-border-dark);
+}
+
+.nan-select--disabled {
+  background-color: var(--nan-bg-secondary);
+  color: var(--nan-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.nan-select--open {
+  border-color: var(--nan-primary-500);
+  box-shadow: 0 0 0 0.1875rem rgba(59, 130, 246, 0.1);
+}
+
+.nan-select-value {
+  flex: 1;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.nan-select-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--nan-text-secondary);
+  transition: transform var(--nan-transition-normal);
+  flex-shrink: 0;
+  margin-left: var(--nan-spacing-sm);
+}
+
+.nan-select--open .nan-select-arrow {
+  transform: rotate(180deg);
+}
+
+/* Select sizes */
+.nan-select--small {
+  padding: var(--nan-spacing-xs) var(--nan-spacing-sm);
+  padding-right: calc(var(--nan-spacing-sm) + 1.25rem);
+  font-size: var(--nan-font-size-xs);
+  min-height: 2rem;
+}
+
+.nan-select--medium {
+  padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+  padding-right: calc(var(--nan-spacing-md) + 1.25rem);
+  font-size: var(--nan-font-size-sm);
+  min-height: 2.5rem;
+}
+
+.nan-select--large {
+  padding: var(--nan-spacing-md) var(--nan-spacing-lg);
+  padding-right: calc(var(--nan-spacing-lg) + 1.25rem);
+  font-size: var(--nan-font-size-md);
+  min-height: 3rem;
+}
+
+/* Select variants */
+.nan-select--error {
+  border-color: var(--nan-error-500);
+  box-shadow: 0 0 0 0.1875rem rgba(239, 68, 68, 0.1);
+}
+
+.nan-select--error:focus,
+.nan-select--error.nan-select--open {
+  border-color: var(--nan-error-600);
+  box-shadow: 0 0 0 0.1875rem rgba(239, 68, 68, 0.2);
+}
+
+.nan-select--success {
+  border-color: var(--nan-success-500);
+  box-shadow: 0 0 0 0.1875rem rgba(16, 185, 129, 0.1);
+}
+
+.nan-select--success:focus,
+.nan-select--success.nan-select--open {
+  border-color: var(--nan-success-600);
+  box-shadow: 0 0 0 0.1875rem rgba(16, 185, 129, 0.2);
+}
+
+/* Select with label */
+.nan-select-label {
+  display: block;
+  font-size: var(--nan-font-size-sm);
+  font-weight: var(--nan-font-weight-medium);
+  color: var(--nan-text-primary);
+  margin-bottom: var(--nan-spacing-sm);
+  line-height: 1.5;
+}
+
+.nan-select-label.required::after {
+  content: ' *';
+  color: var(--nan-error-500);
+}
+
+/* Select error message */
+.nan-select-error {
+  color: var(--nan-error-600);
+  font-size: var(--nan-font-size-sm);
+  margin-top: var(--nan-spacing-xs);
+  line-height: 1.4;
+}
+
+/* Select help text */
+.nan-select-help {
+  color: var(--nan-text-secondary);
+  font-size: var(--nan-font-size-sm);
+  margin-top: var(--nan-spacing-xs);
+  line-height: 1.4;
+}
+
+/* Custom Dropdown */
+.nan-select-dropdown {
+  position: fixed;
+  z-index: 9999;
+  max-height: 12.5rem;
+  overflow-y: auto;
+  background-color: var(--nan-bg-primary);
+  border: 1px solid var(--nan-border-medium);
+  border-radius: var(--nan-radius-md);
+  box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.1);
+  margin-top: 0.25rem;
+}
+
+.nan-select-dropdown-content {
+  padding: 0.25rem 0;
+}
+
+.nan-select-option {
+  padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+  font-size: var(--nan-font-size-sm);
+  color: var(--nan-text-primary);
+  background-color: var(--nan-bg-primary);
+  cursor: pointer;
+  transition: background-color var(--nan-transition-fast);
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+}
+
+.nan-select-option:hover:not(.nan-select-option--disabled) {
+  background-color: var(--nan-bg-secondary);
+}
+
+.nan-select-option--selected {
+  background-color: var(--nan-primary-100);
+  color: var(--nan-primary-900);
+  font-weight: var(--nan-font-weight-medium);
+}
+
+.nan-select-option--selected:hover {
+  background-color: var(--nan-primary-200);
+}
+
+.nan-select-option--disabled {
+  color: var(--nan-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.nan-select-option--disabled:hover {
+  background-color: var(--nan-bg-primary);
+}
+
+/* Select group */
+.nan-select-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.nan-select-group .nan-select {
+  border-radius: 0;
+  margin: 0;
+}
+
+.nan-select-group .nan-select:first-child {
+  border-top-left-radius: var(--nan-radius-md);
+  border-bottom-left-radius: var(--nan-radius-md);
+}
+
+.nan-select-group .nan-select:last-child {
+  border-top-right-radius: var(--nan-radius-md);
+  border-bottom-right-radius: var(--nan-radius-md);
+}
+
+.nan-select-group .nan-select:not(:last-child) {
+  border-right: none;
+}
+
+.nan-select-group .nan-select:not(:first-child) {
+  border-left: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .nan-select--large {
+    padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+    padding-right: calc(var(--nan-spacing-md) + 1.25rem);
+    font-size: var(--nan-font-size-sm);
+    min-height: 2.75rem;
+  }
+
+  .nan-select--medium {
+    padding: var(--nan-spacing-xs) var(--nan-spacing-sm);
+    padding-right: calc(var(--nan-spacing-sm) + 1.25rem);
+    font-size: var(--nan-font-size-sm);
+    min-height: 2.25rem;
+  }
+
+  .nan-select-dropdown {
+    max-height: 10rem;
+  }
+}
+
+/* Scrollbar styling for dropdown */
+.nan-select-dropdown::-webkit-scrollbar {
+  width: 0.375rem;
+}
+
+.nan-select-dropdown::-webkit-scrollbar-track {
+  background: var(--nan-bg-secondary);
+  border-radius: 0.1875rem;
+}
+
+.nan-select-dropdown::-webkit-scrollbar-thumb {
+  background: var(--nan-border-dark);
+  border-radius: 0.1875rem;
+}
+
+.nan-select-dropdown::-webkit-scrollbar-thumb:hover {
+  background: var(--nan-text-secondary);
+}

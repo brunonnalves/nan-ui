@@ -1,0 +1,195 @@
+/* Input Component Styles */
+.nan-input-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.nan-input {
+  width: 100%;
+  padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+  font-size: var(--nan-font-size-sm);
+  font-family: var(--nan-font-family-primary);
+  line-height: 1.5;
+  color: var(--nan-text-primary);
+  background-color: var(--nan-bg-primary);
+  border: 1px solid var(--nan-border-medium);
+  border-radius: var(--nan-radius-md);
+  transition: all var(--nan-transition-normal);
+  box-sizing: border-box;
+}
+
+.nan-input:focus {
+  outline: none;
+  border-color: var(--nan-primary-500);
+  box-shadow: 0 0 0 0.1875rem rgba(239, 68, 68, 0.1);
+}
+
+.nan-input:hover:not(:focus):not(:disabled) {
+  border-color: var(--nan-border-dark);
+}
+
+.nan-input:disabled {
+  background-color: var(--nan-bg-secondary);
+  color: var(--nan-text-disabled);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* Input sizes */
+.nan-input--small {
+  padding: var(--nan-spacing-xs) var(--nan-spacing-sm);
+  font-size: var(--nan-font-size-xs);
+  min-height: 2rem;
+}
+
+.nan-input--medium {
+  padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+  font-size: var(--nan-font-size-sm);
+  min-height: 2.5rem;
+}
+
+.nan-input--large {
+  padding: var(--nan-spacing-md) var(--nan-spacing-lg);
+  font-size: var(--nan-font-size-md);
+  min-height: 3rem;
+}
+
+/* Input variants */
+.nan-input--error {
+  border-color: var(--nan-error-500);
+  box-shadow: 0 0 0 0.1875rem rgba(239, 68, 68, 0.1);
+}
+
+.nan-input--error:focus {
+  border-color: var(--nan-error-600);
+  box-shadow: 0 0 0 0.1875rem rgba(239, 68, 68, 0.2);
+}
+
+.nan-input--success {
+  border-color: var(--nan-success-500);
+  box-shadow: 0 0 0 0.1875rem rgba(16, 185, 129, 0.1);
+}
+
+.nan-input--success:focus {
+  border-color: var(--nan-success-600);
+  box-shadow: 0 0 0 0.1875rem rgba(16, 185, 129, 0.2);
+}
+
+/* Input with icon */
+.nan-input--with-icon {
+  padding-left: calc(var(--nan-spacing-md) + 1.25rem);
+}
+
+.nan-input-icon {
+  position: absolute;
+  left: var(--nan-spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--nan-text-secondary);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.nan-input-icon--left {
+  left: var(--nan-spacing-md);
+}
+
+.nan-input-icon--right {
+  right: var(--nan-spacing-md);
+  left: auto;
+}
+
+/* Input with clear button */
+.nan-input-clear {
+  position: absolute;
+  right: var(--nan-spacing-md);
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--nan-text-secondary);
+  cursor: pointer;
+  padding: var(--nan-spacing-xs);
+  border-radius: var(--nan-radius-full);
+  transition: all var(--nan-transition-fast);
+}
+
+.nan-input-clear:hover {
+  background-color: var(--nan-bg-secondary);
+  color: var(--nan-text-primary);
+}
+
+/* Input group */
+.nan-input-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.nan-input-group .nan-input {
+  border-radius: 0;
+  margin: 0;
+}
+
+.nan-input-group .nan-input:first-child {
+  border-top-left-radius: var(--nan-radius-md);
+  border-bottom-left-radius: var(--nan-radius-md);
+}
+
+.nan-input-group .nan-input:last-child {
+  border-top-right-radius: var(--nan-radius-md);
+  border-bottom-right-radius: var(--nan-radius-md);
+}
+
+.nan-input-group .nan-input:not(:last-child) {
+  border-right: none;
+}
+
+.nan-input-group .nan-input:not(:first-child) {
+  border-left: none;
+}
+
+/* Input with label */
+.nan-input-label {
+  display: block;
+  font-size: var(--nan-font-size-sm);
+  font-weight: var(--nan-font-weight-medium);
+  color: var(--nan-text-primary);
+  margin-bottom: var(--nan-spacing-sm);
+  line-height: 1.5;
+}
+
+.nan-input-label.required::after {
+  content: ' *';
+  color: var(--nan-error-500);
+}
+
+/* Input error message */
+.nan-input-error {
+  color: var(--nan-error-600);
+  font-size: var(--nan-font-size-sm);
+  margin-top: var(--nan-spacing-xs);
+  line-height: 1.4;
+}
+
+/* Input help text */
+.nan-input-help {
+  color: var(--nan-text-secondary);
+  font-size: var(--nan-font-size-sm);
+  margin-top: var(--nan-spacing-xs);
+  line-height: 1.4;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .nan-input--large {
+    padding: var(--nan-spacing-sm) var(--nan-spacing-md);
+    font-size: var(--nan-font-size-sm);
+    min-height: 2.75rem;
+  }
+
+  .nan-input--medium {
+    padding: var(--nan-spacing-xs) var(--nan-spacing-sm);
+    font-size: var(--nan-font-size-sm);
+    min-height: 2.25rem;
+  }
+}

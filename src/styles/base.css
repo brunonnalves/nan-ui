@@ -1,0 +1,209 @@
+/* Reset e estilos base */
+.nan-reset {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.nan-reset *,
+.nan-reset *::before,
+.nan-reset *::after {
+  box-sizing: inherit;
+}
+
+/* Estilos base para formulários */
+.nan-form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--nan-spacing-md);
+}
+
+.nan-label {
+  font-size: var(--nan-font-size-sm);
+  font-weight: var(--nan-font-weight-medium);
+  color: var(--nan-text-primary);
+  margin-bottom: var(--nan-spacing-sm);
+  line-height: 1.5;
+}
+
+.nan-label.required::after {
+  content: ' *';
+  color: var(--nan-error-500);
+}
+
+.nan-label.checkbox {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  cursor: pointer;
+  font-weight: var(--nan-font-weight-normal);
+}
+
+/* Estados de erro */
+.nan-error-text {
+  color: var(--nan-error-600);
+  font-size: var(--nan-font-size-sm);
+  margin-top: var(--nan-spacing-xs);
+  line-height: 1.4;
+}
+
+/* Estados de foco */
+.nan-focus-visible {
+  outline: 2px solid var(--nan-primary-500);
+  outline-offset: 2px;
+}
+
+/* Estados de hover */
+.nan-hover {
+  transition: all var(--nan-transition-normal);
+}
+
+.nan-hover:hover {
+  transform: translateY(-1px);
+}
+
+/* Estados de disabled */
+.nan-disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* Utilitários de espaçamento */
+.nan-mt-xs {
+  margin-top: var(--nan-spacing-xs);
+}
+.nan-mt-sm {
+  margin-top: var(--nan-spacing-sm);
+}
+.nan-mt-md {
+  margin-top: var(--nan-spacing-md);
+}
+.nan-mt-lg {
+  margin-top: var(--nan-spacing-lg);
+}
+.nan-mt-xl {
+  margin-top: var(--nan-spacing-xl);
+}
+
+.nan-mb-xs {
+  margin-bottom: var(--nan-spacing-xs);
+}
+.nan-mb-sm {
+  margin-bottom: var(--nan-spacing-sm);
+}
+.nan-mb-md {
+  margin-bottom: var(--nan-spacing-md);
+}
+.nan-mb-lg {
+  margin-bottom: var(--nan-spacing-lg);
+}
+.nan-mb-xl {
+  margin-bottom: var(--nan-spacing-xl);
+}
+
+.nan-ml-xs {
+  margin-left: var(--nan-spacing-xs);
+}
+.nan-ml-sm {
+  margin-left: var(--nan-spacing-sm);
+}
+.nan-ml-md {
+  margin-left: var(--nan-spacing-md);
+}
+.nan-ml-lg {
+  margin-left: var(--nan-spacing-lg);
+}
+.nan-ml-xl {
+  margin-left: var(--nan-spacing-xl);
+}
+
+.nan-mr-xs {
+  margin-right: var(--nan-spacing-xs);
+}
+.nan-mr-sm {
+  margin-right: var(--nan-spacing-sm);
+}
+.nan-mr-md {
+  margin-right: var(--nan-spacing-md);
+}
+.nan-mr-lg {
+  margin-right: var(--nan-spacing-lg);
+}
+.nan-mr-xl {
+  margin-right: var(--nan-spacing-xl);
+}
+
+/* Utilitários de padding */
+.nan-p-xs {
+  padding: var(--nan-spacing-xs);
+}
+.nan-p-sm {
+  padding: var(--nan-spacing-sm);
+}
+.nan-p-md {
+  padding: var(--nan-spacing-md);
+}
+.nan-p-lg {
+  padding: var(--nan-spacing-lg);
+}
+.nan-p-xl {
+  padding: var(--nan-spacing-xl);
+}
+
+/* Utilitários de display */
+.nan-flex {
+  display: flex;
+}
+.nan-inline-flex {
+  display: inline-flex;
+}
+.nan-block {
+  display: block;
+}
+.nan-inline-block {
+  display: inline-block;
+}
+.nan-hidden {
+  display: none;
+}
+
+/* Utilitários de flexbox */
+.nan-items-center {
+  align-items: center;
+}
+.nan-items-start {
+  align-items: flex-start;
+}
+.nan-items-end {
+  align-items: flex-end;
+}
+.nan-justify-center {
+  justify-content: center;
+}
+.nan-justify-between {
+  justify-content: space-between;
+}
+.nan-justify-start {
+  justify-content: flex-start;
+}
+.nan-justify-end {
+  justify-content: flex-end;
+}
+
+/* Utilitários de gap */
+.nan-gap-xs {
+  gap: var(--nan-spacing-xs);
+}
+.nan-gap-sm {
+  gap: var(--nan-spacing-sm);
+}
+.nan-gap-md {
+  gap: var(--nan-spacing-md);
+}
+.nan-gap-lg {
+  gap: var(--nan-spacing-lg);
+}
+.nan-gap-xl {
+  gap: var(--nan-spacing-xl);
+}
